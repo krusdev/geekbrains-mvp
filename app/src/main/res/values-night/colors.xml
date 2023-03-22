@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_72">#4E62CB</color>
+    <color name="light_gray_bg">#141C24</color>
+
+    <!--text-->
+    <color name="text_dark_2022">#DEFFFFFF</color>
+    <color name="text_white">#DEFFFFFF</color>
+    <color name="text_gray">#DEFFFFFF</color>
+
+</resources>
