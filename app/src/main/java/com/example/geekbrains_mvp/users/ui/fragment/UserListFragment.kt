@@ -7,7 +7,6 @@ import com.example.geekbrains_mvp.R
 import com.example.geekbrains_mvp.constants.CommonConstants
 import com.example.geekbrains_mvp.databinding.FragmentUserListBinding
 import com.example.geekbrains_mvp.start.ui.fragment.BaseFragment
-import com.example.geekbrains_mvp.users.data.model.GitHubUser
 import com.example.geekbrains_mvp.users.domain.UserListPresenter
 import com.example.geekbrains_mvp.users.domain.model.User
 import com.example.geekbrains_mvp.users.ui.adapter.UsersAdapter
@@ -37,7 +36,7 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
 
     private fun initViews() = with(binding) {
         userList.adapter = usersAdapter.apply {
-            onUserClicked = { user -> presenter.selectUser(user.login) }
+            onUserClicked = { user -> presenter.selectUser(user.login, user.reposUrl) }
         }
     }
 

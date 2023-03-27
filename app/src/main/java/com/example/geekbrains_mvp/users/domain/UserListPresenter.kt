@@ -46,5 +46,5 @@ class UserListPresenter : MvpPresenter<UserListView>() {
     private fun handleError(message: String?) = viewState.showSnack(message)
 
 
-    fun selectUser(userLogin: String) = router.navigateTo(screens.user(userLogin))
+    fun selectUser(userLogin: String, reposUrl: String) = router.navigateTo(screens.user(userLogin, reposUrl))
 }

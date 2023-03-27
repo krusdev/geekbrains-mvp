@@ -14,10 +14,12 @@ class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::infl
 
     companion object {
         private const val SELECTED_USER_NAME = "selected_user_name"
+        private const val SELECTED_USER_REPO_URL = "selected_user_repo_url"
 
-        fun newInstance(userName: String) = UserFragment().apply {
+        fun newInstance(userName: String, reposUrl: String) = UserFragment().apply {
             arguments = bundleOf(
-                SELECTED_USER_NAME to userName
+                SELECTED_USER_NAME to userName,
+                SELECTED_USER_REPO_URL to reposUrl
             )
         }
     }
@@ -26,15 +28,20 @@ class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.setUserLogin(
+        presenter.setUserInfo(
             requireArguments().getString(
                 SELECTED_USER_NAME,
+                CommonConstants.DEFAULT_EMPTY_STRING
+            ),
+            requireArguments().getString(
+                SELECTED_USER_REPO_URL,
                 CommonConstants.DEFAULT_EMPTY_STRING
             )
         )
     }
 
-    override fun setUserLogin(login: String) = with(binding.userName) {
-        text = login
+    override fun setUserInfo(login: String, reposUrl: String) = with(binding) {
+        userName.text = login
+        repoUrl.text = reposUrl
     }
 }
