@@ -1,0 +1,5 @@
+ext.urls = [
+        gitHub: "GIT_HUB_URL"
+]
+
+ext.gitHubEndPoints = "\"https://api.github.com/\""

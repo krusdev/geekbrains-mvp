@@ -3,4 +3,6 @@
     <string name="get_users">Get Users</string>
     <string name="user_list">Users:</string>
     <string name="user_name">User:</string>
+    <string name="repo_url">Repository:</string>
+    <string name="unexpected_error">Unexpected error</string>
 </resources>

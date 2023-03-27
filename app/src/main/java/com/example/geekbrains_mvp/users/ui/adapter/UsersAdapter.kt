@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geekbrains_mvp.databinding.ItemGitHubUserBinding
-import com.example.geekbrains_mvp.users.data.model.GitHubUser
+import com.example.geekbrains_mvp.users.domain.model.User
 
 class UsersAdapter :
-    ListAdapter<GitHubUser, UsersAdapter.GitHubUserViewHolder>(UserDiffUtilCallBack()) {
+    ListAdapter<User, UsersAdapter.GitHubUserViewHolder>(UserDiffUtilCallBack()) {
 
-    var onUserClicked: ((GitHubUser) -> Unit)? = null
+    var onUserClicked: ((User) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitHubUserViewHolder {
         return GitHubUserViewHolder(
@@ -26,21 +26,21 @@ class UsersAdapter :
 
     inner class GitHubUserViewHolder(
         private val binding: ItemGitHubUserBinding,
-        private val selectUser: ((GitHubUser) -> Unit)?,
+        private val selectUser: ((User) -> Unit)?,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: GitHubUser) = with(binding.userLogin) {
+        fun bind(item: User) = with(binding.userLogin) {
             text = item.login
             setOnClickListener { selectUser?.invoke(item) }
         }
     }
 }
 
-class UserDiffUtilCallBack : DiffUtil.ItemCallback<GitHubUser>() {
-    override fun areItemsTheSame(oldItem: GitHubUser, newItem: GitHubUser): Boolean {
+class UserDiffUtilCallBack : DiffUtil.ItemCallback<User>() {
+    override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: GitHubUser, newItem: GitHubUser): Boolean {
+    override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
         return oldItem.login == newItem.login
     }
 }

@@ -4,7 +4,7 @@ import com.example.geekbrains_mvp.users.ui.view.UserView
 import moxy.MvpPresenter
 
 class UserPresenter : MvpPresenter<UserView> () {
-    fun setUserLogin(login: String) {
-        viewState.setUserLogin(login)
+    fun setUserInfo(login: String, reposUrl: String) {
+        viewState.setUserInfo(login, reposUrl)
     }
 }

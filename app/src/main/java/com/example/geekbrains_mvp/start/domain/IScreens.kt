@@ -9,11 +9,11 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 interface IScreens {
     fun start(): Screen
     fun userList(): Screen
-    fun user(login: String): Screen
+    fun user(login: String, reposUrl: String): Screen
 }
 
 class AndroidScreens : IScreens {
     override fun start() = FragmentScreen { StartFragment.newInstance() }
     override fun userList() = FragmentScreen { UserListFragment.newInstance() }
-    override fun user(login: String) = FragmentScreen { UserFragment.newInstance(login) }
+    override fun user(login: String, reposUrl: String) = FragmentScreen { UserFragment.newInstance(login, reposUrl) }
 }
