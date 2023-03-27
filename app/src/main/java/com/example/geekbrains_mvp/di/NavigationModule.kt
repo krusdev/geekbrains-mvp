@@ -1,4 +1,4 @@
-package com.example.geekbrains_mvp.start.di
+package com.example.geekbrains_mvp.di
 
 import com.example.geekbrains_mvp.start.domain.AndroidScreens
 import com.example.geekbrains_mvp.start.domain.IScreens

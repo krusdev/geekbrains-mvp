@@ -1,4 +1,4 @@
-package com.example.geekbrains_mvp.start.di
+package com.example.geekbrains_mvp.di
 
 import com.example.geekbrains_mvp.start.domain.MainPresenter
 import com.example.geekbrains_mvp.start.domain.StartPresenter
@@ -8,7 +8,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [NavigationModule::class])
+@Component(modules = [NavigationModule::class, GitHubModule::class, UseCasesModule::class])
 interface AppComponent {
 
     fun inject(mainActivity: MainActivity)

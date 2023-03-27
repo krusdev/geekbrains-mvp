@@ -1,8 +1,8 @@
 package com.example.geekbrains_mvp
 
 import android.app.Application
-import com.example.geekbrains_mvp.start.di.AppComponent
-import com.example.geekbrains_mvp.start.di.DaggerAppComponent
+import com.example.geekbrains_mvp.di.AppComponent
+import com.example.geekbrains_mvp.di.DaggerAppComponent
 
 class AppClass : Application() {
 
